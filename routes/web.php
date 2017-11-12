@@ -61,7 +61,9 @@ Route::get('/tests', function () {
     //使用 destroy方法
     \App\Post::destroy(2);
 
-   
+    //刪除多筆資料
+    \App\Post::destroy(3,5,7);
+
 
 
 });
