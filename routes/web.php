@@ -31,4 +31,8 @@ Route::get('/tests', function () {
     //使用 all方法
     $posts=\App\Post::all();
     dd($posts);
+
+    //使用 find 方法
+    $post=\App\Post::find(1);
+    dd($post);
 });
