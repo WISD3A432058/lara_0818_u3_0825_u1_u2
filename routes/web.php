@@ -53,10 +53,15 @@ Route::get('/tests', function () {
     $post->title='saved title';
     $post->content='saved content';
     $post->save();
-    */
+
     //使用 delete方法
     $post=\App\Post::find(1);
     $post->delete();
+    */
+    //使用 destroy方法
+    \App\Post::destroy(2);
+
+   
 
 
 });
