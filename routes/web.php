@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('/tests', function () {
+  /*
     //使用 create方法
     \App\Post :: create ([
         'title' => 'test title',
@@ -35,4 +36,9 @@ Route::get('/tests', function () {
     //使用 find 方法
     $post=\App\Post::find(1);
     dd($post);
+*/
+    //練習條件式
+    $posts=\App\Post::where('id','<',10)->orderBy('id','DESC')->get();
+    dd($posts);
+
 });
