@@ -47,12 +47,16 @@ Route::get('/tests', function () {
         'title'=>'updated title',
         'content'=>'updated content',
     ]);
-    */
+
     //換用 save方法
     $post=\App\Post::find(1);
     $post->title='saved title';
     $post->content='saved content';
     $post->save();
+    */
+    //使用 delete方法
+    $post=\App\Post::find(1);
+    $post->delete();
 
 
 });
