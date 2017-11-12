@@ -57,13 +57,19 @@ Route::get('/tests', function () {
     //使用 delete方法
     $post=\App\Post::find(1);
     $post->delete();
-    */
+
     //使用 destroy方法
     \App\Post::destroy(2);
 
     //刪除多筆資料
     \App\Post::destroy(3,5,7);
+    */
 
+  //取得 Collection
+    $allPosts=\App\Post::all();
+    dd($allPosts);
+    $featuredPosts=\App\Post::where('is_feature',1)->get();
+    dd($featuredPosts);
 
 
 });
