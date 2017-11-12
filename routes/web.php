@@ -16,12 +16,19 @@ Route::get('/', function () {
 });
 
 Route::get('/tests', function () {
+    //使用 create方法
     \App\Post :: create ([
         'title' => 'test title',
         'content '=> 'test content',
     ]);
+
+    //改用 new 的方式新增資料
     $post=new\App\Post();
     $post->title='test title';
     $post->content='test content';
     $post->save();
+
+    //使用 all方法
+    $posts=\App\Post::all();
+    dd($posts);
 });
