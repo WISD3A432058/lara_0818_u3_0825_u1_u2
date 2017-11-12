@@ -36,9 +36,16 @@ Route::get('/tests', function () {
     //使用 find 方法
     $post=\App\Post::find(1);
     dd($post);
-*/
+
     //練習條件式
     $posts=\App\Post::where('id','<',10)->orderBy('id','DESC')->get();
     dd($posts);
+    */
+    //使用 update方法
+    $post=\App\Post::find(1);
+    $post->update([
+        'title'=>'updated title',
+        'content'=>'updated content',
+    ]);
 
 });
