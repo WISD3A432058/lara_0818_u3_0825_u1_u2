@@ -13,10 +13,11 @@
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/tests', function () {
     \App\Post :: create ([
         'title' => 'test title',
         'content '=> 'test content',
     ]);
 });
-
-
