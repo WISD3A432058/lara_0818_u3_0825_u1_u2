@@ -12,6 +12,9 @@ class PostsTableSeeder extends Seeder
      */
     public function run()
     {
+        // 每次   seeding   前先清空資料表
+        Post::truncate();
+        
         // 在新建立的   seeder   檔案裡，撰寫    run     方法的內容
        foreach (range(1,20) as $number){
            Post::create([
