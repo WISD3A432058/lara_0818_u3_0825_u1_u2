@@ -13,6 +13,7 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
         $this->call(CommentsTableSeeder::class);
+        //將   seeder   設定至    DatabaseSeeder     內
         $this->call(PostsTableSeeder::class);
     }
 }
