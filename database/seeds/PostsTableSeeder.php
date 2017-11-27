@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Post;
+use Carbon\Carbon;
 
 class PostsTableSeeder extends Seeder
 {
@@ -14,12 +15,16 @@ class PostsTableSeeder extends Seeder
     {
         // 每次   seeding   前先清空資料表
         Post::truncate();
-        
+
         // 在新建立的   seeder   檔案裡，撰寫    run     方法的內容
        foreach (range(1,20) as $number){
+           $total= 20;
            Post::create([
                'title'=>'title'.$number,
                'content'=>'content'.$number,
+               'is_feature' => rand(0,1),
+               'created_at' => Carbon::now() ->subDays($total - $number),
+               'updated_at' => Carbon::now() ->subDays($total - $number),
            ]);
        }
     }
