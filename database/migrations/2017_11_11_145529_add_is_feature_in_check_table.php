@@ -15,6 +15,8 @@ class AddIsFeatureInCheckTable extends Migration
     {
         Schema::table('check', function (Blueprint $table) {
             //
+            $table->string('title',500)->change();
+            $table->boolean('is_feature')->default(false)->after('content');
         });
     }
 
@@ -27,8 +29,6 @@ class AddIsFeatureInCheckTable extends Migration
     {
         Schema::table('check', function (Blueprint $table) {
             //
-            $table->string('title',500)->change();
-            $table->boolean('is_feature')->default(false)->after('content');
         });
     }
 }
